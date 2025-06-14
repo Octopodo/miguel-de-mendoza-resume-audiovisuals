@@ -1,0 +1,45 @@
+---
+let { title, icon, borderColor, bgColor, titleColor, contentColor, link } =
+    Astro.props;
+
+borderColor = `--color-${borderColor}`;
+bgColor = `--color-${bgColor}`;
+titleColor = `--color-${titleColor}`;
+contentColor = `--color-${contentColor}`;
+---
+
+<section class="section">
+    <span class="section-header">
+        {icon && <i class={`fas fa-${icon} title-icon`} />}
+        {title && <h2 class="section-title">{title}</h2>}
+        {
+            link && (
+                <a href={link} class="section-link" target="_blank">
+                    <i class="fas fa-external-link-alt" />
+                </a>
+            )
+        }
+    </span>
+
+    <slot name="content" class="section-content" />
+</section>
+
+<style define:vars={{ borderColor, bgColor, titleColor, contentColor }}>
+    .section-header {
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        justify-content: left;
+        margin-bottom: 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+        margin-left: 0.5rem;
+        color: var(titleColor);
+    }
+    .title-icon {
+        font-size: 2rem;
+        margin-right: 0.5rem;
+        color: var(titleColor);
+    }
+</style>

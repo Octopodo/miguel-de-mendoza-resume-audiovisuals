@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import url('./vars.css');
+body {
+    font-family: 'Inter', sans-serif;
+    background: #1b1b1b; /* Opcional: #ECF0F1 para gris claro */
+    color: #e4e4e4;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #aae046; /* Azul oscuro para el header */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    color: #add467;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #add467;
+}
+
+strong {
+    font-size: 1.4rem;
+    color: rgb(173, 212, 103);
+    font-weight: 700;
+}
+
+.tech {
+    font-family: 'Fira Code', monospace;
+    background: rgba(173, 212, 103, 0.5);
+    color: #070b29;
+    margin-left: 5px;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    background: #2b2b2b;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Colores por sección */
+section.perfil {
+    border-left: 4px solid rgb(173, 212, 103);
+}
+section.perfil i,
+section.perfil h2 {
+    color: rgb(173, 212, 103);
+}
+section.herramientas-y-tecnologías {
+    border-left: 4px solid rgb(249, 180, 78);
+}
+section.herramientas-y-tecnologías i,
+section.herramientas-y-tecnologías strong,
+section.herramientas-y-tecnologías h2,
+h1 {
+    color: rgb(249, 180, 78);
+}
+section.experiencia-profesional {
+    border-left: 4px solid rgb(158, 161, 224);
+}
+section.experiencia-profesional i,
+section.experiencia-profesional strong,
+section.experiencia-profesional h2 {
+    color: rgb(158, 161, 224);
+}
+section.proyectos-personales-destacados {
+    border-left: 4px solid rgb(173, 212, 103);
+}
+section.proyectos-personales-destacados i,
+section.proyectos-personales-destacados h2 {
+    color: rgb(173, 212, 103);
+}
+section.formación {
+    border-left: 4px solid rgb(191, 132, 214);
+}
+section.formación i,
+section.formación strong,
+section.formación a,
+section.formación h2 {
+    color: rgb(191, 132, 214);
+}
+section.formación a:hover {
+    color: rgb(240, 219, 188);
+}
+section.habilidades {
+    border-left: 4px solid rgb(191, 132, 214);
+}
+section.habilidades i,
+section.habilidades strong,
+section.habilidades h2 {
+    color: rgb(191, 132, 214);
+}
+section.idiomas-y-otros-datos {
+    border-left: 4px solid rgb(158, 161, 224);
+}
+section.idiomas-y-otros-datos i,
+section.idiomas-y-otros-datos strong,
+section.idiomas-y-otros-datos h2 {
+    color: rgb(158, 161, 224);
+}
+
+a {
+    color: rgb(249, 180, 78); /* Verde azulado para enlaces */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: rgb(240, 219, 188); /* Tono más oscuro del verde azulado */
+}
+
+.title-icon {
+    margin-right: 15px;
+}
+
+.external-link {
+    font-size: 0.9rem;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+#scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(173, 212, 103); /* Azul medio */
+    color: #1a1a1a;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#scroll-top.visible {
+    opacity: 1;
+}
+
+.tools-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tools-list li {
+    margin: 0.5rem 0;
+}
+
+.tools-list ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.tools-list ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    section {
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    strong {
+        font-size: 1.1rem;
+    }
+    .tools-list ul li {
+        display: block;
+    }
+}

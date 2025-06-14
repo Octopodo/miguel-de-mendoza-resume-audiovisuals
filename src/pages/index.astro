@@ -1,0 +1,56 @@
+---
+import Header from '../components/Header.astro';
+import Section from '../components/Section.astro';
+import cvData from '../data/cv.json';
+import '../styles/global.css';
+const { sections } = cvData;
+
+const icons = {
+    Perfil: 'fa-user',
+    'Herramientas y Tecnologías': 'fa-tools',
+    'Experiencia Profesional': 'fa-briefcase',
+    'Proyectos Personales Destacados': 'fa-code',
+    Formación: 'fa-graduation-cap',
+    Habilidades: 'fa-star',
+    'Idiomas y Otros Datos': 'fa-globe',
+};
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CV - Motion Graphics y Desarrollador Full Stack</title>
+        <link rel="stylesheet" href="/styles/global.css" />
+    </head>
+    <body>
+        <div class="container">
+            <Header />
+
+            <Section title="My section" icon="user" titleColor="primary">
+                <p slot="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Deleniti totam minus sapiente, maxime consequuntur
+                    reiciendis facilis quidem laudantium delectus quos sit
+                    mollitia velit iste consectetur ipsum quae et! Officiis,
+                    praesentium.
+                </p>
+            </Section>
+        </div>
+
+        <button id="scroll-top" title="Volver arriba">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script>
+            const scrollTopBtn = document.getElementById('scroll-top');
+            window.addEventListener('scroll', () => {
+                scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+            });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
+    </body>
+</html>

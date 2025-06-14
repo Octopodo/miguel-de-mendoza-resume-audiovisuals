@@ -1,0 +1,119 @@
+{
+    "header": {
+        "name": "Miguel de Mendoza",
+        "title": "Motion Graphics y Desarrollador Full Stack",
+        "links": {
+            "github": "https://github.com/Octopodo",
+            "email": "mailto:m.legnacra@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/miguel-de-mendoza-7a380b2a/"
+        }
+    },
+    "sections": [
+        {
+            "title": "Perfil",
+            "content": "Motion Grapher y Desarrollador Full Stack con más de 10 años combinando desarrollo de software y diseño audiovisual. Experto en <span class='tech'>Python</span>, <span class='tech'>TensorFlow</span>, <span class='tech'>PyTorch</span>, <span class='tech'>Django</span>, <span class='tech'>Vue.js</span> y <span class='tech'>TypeScript</span>, con foco en inteligencia artificial y automatización. En el último año, diseñé un sistema en <span class='tech'>Extendscript</span> y <span class='tech'>CEP</span> que redujo tiempos de edición de vídeo de 5-6 horas a 1 hora por pieza. <a href='https://www.coursera.org/account/accomplishments/professional-cert/ZVJO3J2JJXGX?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof' target='_blank'>Certificado por IBM</a> en IA, aporto creatividad técnica, capacidad analítica y soluciones escalables a proyectos innovadores."
+        },
+        {
+            "title": "Herramientas y Tecnologías",
+            "content": [
+                {
+                    "category": "Desarrollo de Software",
+                    "items": [
+                        { "name": "Lenguajes", "details": ["Python", "JavaScript/TypeScript", "HTML/CSS/Sass"] },
+                        {
+                            "name": "Frameworks y Librerías",
+                            "details": [
+                                "Django",
+                                "Django REST Framework",
+                                "Vue.js/Vuetify",
+                                "TensorFlow",
+                                "PyTorch",
+                                "Scikit-learn",
+                                "Angular/React"
+                            ]
+                        },
+                        { "name": "Herramientas", "details": ["Git", "Npm/vite", "Node.js", "Webpack", "Gulp"] },
+                        { "name": "Testing", "details": ["Vitest", "Pytest"] }
+                    ]
+                },
+                {
+                    "category": "Programación y Diseño Audiovisual",
+                    "items": [
+                        { "name": "Diseño", "details": ["After Effects", "Photoshop", "Cinema 4D"] },
+                        { "name": "Programación Audiovisual", "details": ["Extendscript", "Adobe CEP", "OpenCV"] }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Experiencia Profesional",
+            "content": [
+                {
+                    "text": "<strong>Cámara y Editor de Vídeo - Cursos de Formación Profesional en Empresariales</strong> (Mar 2024 - Mar 2025)<br>Grabé y edité contenido audiovisual para cursos empresariales, asegurando alta calidad visual y narrativa.<br>Desarrollé un sistema en <span class='tech'>Extendscript</span> y <span class='tech'>Adobe CEP</span> para automatizar la edición en <span class='tech'>Adobe Premiere</span> y <span class='tech'>After Effects</span>, reduciendo el tiempo por pieza de 5-6 horas a 1 hora (80% de mejora en eficiencia).",
+                    "url": ""
+                },
+                {
+                    "text": "<strong>Desarrollador Postproducción Freelance</strong> (Oct 2016 - Abr 2019)<br>Creé scripts en  <span class='tech'>JavaScript</span> y <span class='tech'>ExtendScript</span>para optimizar flujos de trabajo en postproducción, ahorrando un 30% en tiempos de entrega.<br>Diseñé interfaces interactivas con <span class='tech'>Vue.js</span> y <span class='tech'>Adobe CEP</span>para proyectos de animación, mejorando la usabilidad y experiencia del cliente.",
+                    "url": ""
+                },
+                {
+                    "text": "<strong>Director Creativo e I+D en TVA</strong> (2014 - 2015)<br>Supervisé la creación de contenido visual (vídeos, diseño web) y lideré un equipo creativo de 5 personas.<br>Implementé algoritmos en <span class='tech'>Python</span> y <span class='tech'>OpenCV</span> para análisis de redes sociales y detección facial, integrados en estrategias de marketing.",
+                    "url": ""
+                },
+                {
+                    "text": "<strong>Grafista en Lucky Road</strong> (Sept - Oct 2016)<br>Automatizé la generación de grafismos para “Boca-zas” (Disney Channel) con <span class='tech'>Extendscript</span>, entregando más de 50 assets en un mes bajo plazos estrictos.",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Proyectos Personales Destacados",
+            "content": [
+                {
+                    "text": "<strong> KT Extendscript Builder</strong>(En desarrollo)<br>Desarrollo un CLI con <span class='tech'>Vite</span> y <span class='tech'>Rollup</span> para transpilar <span class='tech'>TypeScript</span> a <span class='tech'>Extendscript</span>, permitiendo a desarrolladores de After Effects y Premiere usar las últimas características de JavaScript en sus scripts, ahorrando muhco tiempo en el desarrollo.",
+                    "url": "https://github.com/Octopodo/kt-extendscript-builder"
+                },
+                {
+                    "text": "<strong>LTTR (Lotería Predictiva)</strong>(En desarrollo)<br>Backend en <span class='tech'>Django/Django REST Framework</span> para scraping automatizado de resultados de loterías (Euromillones, Primitiva).<br>Entrené modelos de IA con <span class='tech'>TensorFlow</span> y <span class='tech'>ResNets</span> para predecir resultados, logrando un pipeline de datos escalable.<br>Frontend en <span class='tech'>Vue.js</span> para gestionar scraping, entrenamientos y visualización de métricas.",
+                    "url": ""
+                },
+                {
+                    "text": "<strong>Plainetarium</strong><br>Aplicación para generar planetas y esferas en <span class='tech'>HTML</span> y <span class='tech'>Css</span>, generando el codigo necesario listo para insertar en proyectos Web.<br>Frontend en <span class='tech'>Vue.js</span> con visualizaciones interactivas, optimizado para rendimiento en tiempo real.",
+                    "url": "https://octopodo.github.io/plainetarium/"
+                },
+                {
+                    "text": "<strong>Fretboard Master</strong> Aplicación para aprender escalas y acordes en la guitarra con un mástil interactivo .<br>Desarrollado con <span class='tech'>Vue.js</span> y <span class='tech'>Vuetify</span>",
+                    "url": "https://octopodo.github.io/FretboardMaster.github.io/"
+                },
+                {
+                    "text": "<strong>AE Pseudo UI</strong><br>Landing page para mostrar la integración de mis herramientas en la interfaz de After Effects. Desarrollado con <span class='tech'>Astro</span> y <span class='tech'>React</span>  ",
+                    "url": "https://octopodo.github.io/ae-pseudo-ui/"
+                }
+            ]
+        },
+        {
+            "title": "Formación",
+            "content": [
+                "<strong><a href='https://www.coursera.org/account/accomplishments/professional-cert/ZVJO3J2JJXGX?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof' target='blank'>Certificado en Desarrollo de Inteligencia Artificial - IBM</a></strong> (2024)<br>Curso especializado en <span class='tech'>PyTorch</span>, <span class='tech'>Scikit-learn</span> y <span class='tech'>TensorFlow</span>, con énfasis en redes neuronales y aprendizaje profundo.",
+                "<strong> Licenciado en Bellas Artes - Universidad Francisco de Vitoria</strong> (2011)"
+            ]
+        },
+        {
+            "title": "Habilidades",
+            "content": [
+                "Desarrollo full stack: <span class='tech'>Python</span>, <span class='tech'>Django</span>, <span class='tech'>Vue.js</span>, <span class='tech'>TensorFlow</span>, <span class='tech'>PyTorch</span>",
+                "Inteligencia artificial: Modelos predictivos, <span class='tech'>ResNets</span>, scraping de datos",
+                "Automatización: <span class='tech'>Extendscript</span>, <span class='tech'>CEP</span>, optimización de procesos",
+                "Creatividad técnica: Motion graphics y animación como diferenciador",
+                "Alta capacidad analítica, aprendizaje rápido y trabajo colaborativo"
+            ]
+        },
+        {
+            "title": "Idiomas y Otros Datos",
+            "content": [
+                "<strong>Idiomas:</strong> Inglés (B1 - Intermedio Alto), Catalán (Nativo)",
+                "<strong>Otros:</strong> Carné de conducir B, experiencia en hardware, técnico de sonido"
+            ]
+        }
+    ]
+}
