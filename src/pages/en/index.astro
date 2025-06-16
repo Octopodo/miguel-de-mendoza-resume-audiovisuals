@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CVContent from '../../components/CVContent.astro';
+import CVHeader from '../../components/CVHeader.astro';
+import CVSection from '../../components/CVSection.astro';
+import JobEntry from '../../components/JobEntry.astro';
+import SkillsList from '../../components/SkillsList.astro';
+
+// CV data in English
+const personalInfo = {
+    name: 'Miguel de Mendoza',
+    title: 'Camera Operator and Audiovisual Technician',
+    email: 'm.legnacra@gmail.com',
+    phone: '+34 674 737 556',
+    linkedin: 'https://www.linkedin.com/in/miguel-de-mendoza-7a380b2a/',
+    github: 'https://github.com/octopodo',
+    location: 'Madrid, Spain',
+};
+
+const technicalSkills = [
+    'DSLR and 4K video camera operation',
+    'Shot and framing configuration in studio',
+    'Professional lighting',
+    'Chroma key',
+    'Video editing',
+    'Adobe After Effects',
+    'Adobe Photoshop',
+    'Adobe Illustrator',
+    'Adobe Premiere',
+    'Cinema 4D',
+    'Presonus Studio One 4',
+    'Development with Extendscript and CEP',
+    'Frontend: Vue, CSS/Sass, Node, Webpack',
+    'Project management',
+    'Process automation',
+];
+
+const personalSkills = [
+    'High learning capacity and adaptability',
+    'Organization and efficient time management',
+    'Teamwork and effective communication',
+    'Creativity and artistic curiosity',
+    'English (B1, spoken and written)',
+    'Catalan (native)',
+    'Spanish (native)',
+];
+---
+
+<Layout title="CV - Camera Operator and Audiovisual Technician" lang="en">
+    <CVContent>
+        <CVHeader
+            name={personalInfo.name}
+            title={personalInfo.title}
+            email={personalInfo.email}
+            phone={personalInfo.phone}
+            linkedin={personalInfo.linkedin}
+            github={personalInfo.github}
+            location={personalInfo.location}
+        />
+
+        <CVSection title="Professional Profile">
+            <p>
+                Camera operator and audiovisual technician with more than 15
+                years of experience in video production and recording, both in
+                studio and live environments. Expert in handling DSLR and 4K
+                video cameras, lighting, chroma key, and technical support
+                during filming. I combine technical and creative skills to
+                ensure high-quality results in audiovisual projects. My
+                analytical ability, attention to detail, and collaborative
+                approach make me a valuable asset to any production team.
+            </p>
+        </CVSection>
+        <CVSection title="Technical Skills">
+            <SkillsList items={technicalSkills} variant="tech" />
+        </CVSection>
+
+        <CVSection title="Personal Skills">
+            <SkillsList items={personalSkills} variant="languages" />
+        </CVSection>
+        <CVSection title="Professional Experience">
+            <JobEntry
+                position="Studio Technician and Editor"
+                company="ForproTV"
+                period="September 2024 – Present"
+            >
+                <ul>
+                    <li>
+                        Camera operator in studio for training videos, using
+                        DSLR and 4K video cameras.
+                    </li>
+                    <li>
+                        Configuration of lighting, chroma key, and sound for
+                        live and pre-recorded recordings.
+                    </li>
+                    <li>
+                        Video editing with effects and chroma, optimizing
+                        workflows and reducing editing times by 80%.
+                    </li>
+                </ul>
+            </JobEntry>
+
+            <JobEntry
+                position="Freelance – Camera Operator and Audiovisual Technician"
+                company="Señor Balboa, Forpro.tv, Ejecon"
+                period="October 2016 – April 2019"
+            >
+                <ul>
+                    <li>
+                        Camera operator in audiovisual productions, including
+                        live events and studio recordings.
+                    </li>
+                    <li>
+                        Technical support in chroma key, color correction, and
+                        post-production with After Effects.
+                    </li>
+                    <li>
+                        Photography and video recording for corporate and
+                        training projects.
+                    </li>
+                </ul>
+            </JobEntry>
+
+            <JobEntry
+                position="Graphic Designer"
+                company="Lucky Road"
+                period="September – October 2016"
+            >
+                <ul>
+                    <li>
+                        Creation of graphics for Disney Channel's "Boca-zas"
+                        program.
+                    </li>
+                    <li>
+                        Process automation to generate graphic material within
+                        tight deadlines, maintaining television quality.
+                    </li>
+                </ul>
+            </JobEntry>
+
+            <JobEntry
+                position="Creative Director"
+                company="TVA / R&D"
+                period="2014 – 2015"
+            >
+                <ul>
+                    <li>
+                        Responsible for visual identity, including corporate
+                        video production and multimedia design.
+                    </li>
+                    <li>
+                        Technical support in audiovisual projects, providing
+                        creative and technological expertise.
+                    </li>
+                </ul>
+            </JobEntry>
+
+            <JobEntry
+                position="Freelance – Motion Graphics and Audiovisual Technician"
+                company="Clients: Cáritas, Renta 4, Cintra"
+                period="2011 – 2014"
+            >
+                <ul>
+                    <li>
+                        Design and production of motion graphics for spots,
+                        music videos, and corporate projects with After Effects.
+                    </li>
+                    <li>
+                        Technical support in audiovisual productions, including
+                        video recording and editing.
+                    </li>
+                </ul>
+            </JobEntry>
+
+            <JobEntry
+                position="Music Producer"
+                company="Kalamar Tinta Negra, King Joker, El Mito de la Taberna"
+                period="April 2019 – May 2022"
+            >
+                <ul>
+                    <li>
+                        Integral music production, including recording and
+                        mixing, applying technical audio knowledge.
+                    </li>
+                </ul>
+            </JobEntry>
+        </CVSection>
+
+        <CVSection title="Education">
+            <JobEntry
+                position="Bachelor's Degree in Fine Arts"
+                company="Francisco de Vitoria University (UFV)"
+                period="2011"
+            />
+
+            <JobEntry
+                position="Diploma in Mixing"
+                company="Mixing Institute"
+                period="2019"
+            />
+        </CVSection>
+
+        <CVSection title="Additional Projects">
+            <div class="project-entry">
+                <h4>KT Smart Sequencer</h4>
+                <p>
+                    Automation tool for video editing in After Effects,
+                    optimizing audiovisual workflows.
+                </p>
+            </div>
+
+            <div class="project-entry">
+                <h4>KT Framework</h4>
+                <p>
+                    Framework for Adobe APIs, facilitating tool development
+                    without affecting production times.
+                </p>
+            </div>
+        </CVSection>
+
+        <CVSection title="Additional Information">
+            <ul>
+                <li>Driving license B.</li>
+                <li>
+                    Sound technician and musician, with experience in hardware
+                    disassembly and assembly.
+                </li>
+            </ul>
+        </CVSection>
+    </CVContent>
+
+    <style>
+        .project-entry {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .project-entry h4 {
+            color: var(--primary-color);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .project-entry p {
+            margin: 0;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+    </style>
+</Layout>

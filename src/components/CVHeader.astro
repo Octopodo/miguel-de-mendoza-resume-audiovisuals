@@ -1,0 +1,160 @@
+---
+export interface Props {
+    name: string;
+    title: string;
+    email: string;
+    phone: string;
+    linkedin: string;
+    github: string;
+    location: string;
+}
+
+const { name, title, email, phone, linkedin, github, location } = Astro.props;
+---
+
+<header class="cv-header">
+    <h1>{name}</h1>
+    <h2>{title}</h2>
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a
+                href={`mailto:${email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                {email}
+            </a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>{phone}</span>
+        </div>
+        <a href={linkedin} target="_blank" rel="noopener noreferrer">
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </a>
+        <a href={github} target="_blank" rel="noopener noreferrer">
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+            </div>
+        </a>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>{location}</span>
+        </div>
+    </div>
+</header>
+
+<style>
+    .cv-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 3px solid var(--accent-color);
+    }
+
+    .cv-header h1 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .cv-header h2 {
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        transition: all var(--transition-base);
+        border: 1px solid var(--border-color);
+    }
+
+    .contact-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--shadow-medium);
+        border-color: var(--accent-color);
+    }
+
+    .contact-item i {
+        font-size: 1.1rem;
+        color: var(--accent-color);
+        width: 20px;
+        text-align: center;
+    }
+
+    .contact-item a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color var(--transition-fast);
+    }
+
+    .contact-item a:hover {
+        color: var(--primary-color);
+    }
+
+    .contact-item span {
+        color: var(--text-color);
+        font-weight: 500;
+    }
+
+    /* Specific icon colors */
+    .contact-item .fa-envelope {
+        color: #ea4335;
+    }
+
+    .contact-item .fa-phone {
+        color: #34a853;
+    }
+
+    .contact-item .fa-linkedin {
+        color: #0077b5;
+    }
+
+    .contact-item .fa-github {
+        color: #333;
+    }
+
+    .contact-item .fa-map-marker-alt {
+        color: #ff6b6b;
+    }
+
+    @media (max-width: 768px) {
+        .cv-header h1 {
+            font-size: 2rem;
+        }
+
+        .cv-header h2 {
+            font-size: 1rem;
+        }
+
+        .contact-info {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-item {
+            min-width: 200px;
+            justify-content: center;
+        }
+    }
+</style>

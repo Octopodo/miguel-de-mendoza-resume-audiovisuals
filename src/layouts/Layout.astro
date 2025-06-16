@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+    title: string;
+    lang: string;
+}
+
+const { title, lang } = Astro.props;
+const alternateLocale = lang === 'es' ? 'en' : 'es';
+const alternateUrl = lang === 'es' ? '/cv-2025/en/' : '/cv-2025/';
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <link rel="icon" type="image/svg+xml" href="/cv-2025/favicon.svg" />
+        <link rel="alternate" hreflang={alternateLocale} href={alternateUrl} />
+    </head>
+    <body>
+        <!-- <div class="language-switcher">
+            <a href={alternateUrl} class="lang-link">
+                {alternateLocale === 'en' ? 'English' : 'Español'}
+            </a>
+        </div> -->
+
+        <div class="container">
+            <slot />
+        </div>
+
+        <button
+            id="scroll-top"
+            title={lang === 'es' ? 'Volver arriba' : 'Back to top'}
+        >
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <script>
+            const scrollTopBtn = document.getElementById('scroll-top');
+            if (scrollTopBtn) {
+                window.addEventListener('scroll', () => {
+                    scrollTopBtn.classList.toggle(
+                        'visible',
+                        window.scrollY > 300,
+                    );
+                });
+                scrollTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        </script>
+    </body>
+</html>
+
+<style>
+    .language-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .lang-link {
+        display: inline-block;
+        padding: 8px 16px;
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .lang-link:hover {
+        background: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .language-switcher {
+            top: 10px;
+            right: 10px;
+        }
+
+        .lang-link {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+        }
+    }
+</style>

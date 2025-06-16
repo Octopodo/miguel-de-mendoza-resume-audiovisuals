@@ -1,0 +1,313 @@
+---
+export interface Props {
+    position: string;
+    company: string;
+    period: string;
+}
+
+const { position, company, period } = Astro.props;
+---
+
+<div class="job-entry">
+    <div class="job-header">
+        <h4>{position}</h4>
+        <div class="company-date">
+            <span class="company">{company}</span>
+            <span class="separator">|</span>
+            <span class="period">{period}</span>
+        </div>
+    </div>
+
+    <div class="job-description">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .job-entry {
+        background: var(--bg-secondary);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid var(--accent-color);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .job-entry::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent-color), transparent);
+    }
+
+    .job-entry:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border-left-color: var(--primary-color);
+    }
+
+    .job-header {
+        margin-bottom: 1rem;
+    }
+
+    .job-entry h4 {
+        margin: 0 0 0.5rem 0;
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .company-date {
+        color: var(--secondary-color);
+        font-size: 0.95rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .company {
+        font-weight: 600;
+    }
+
+    .separator {
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    .period {
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .job-description {
+        color: var(--text-color);
+    }
+
+    .job-description :global(ul) {
+        margin: 0.5rem 0;
+        padding-left: 1.2rem;
+    }
+
+    .job-description :global(li) {
+        margin-bottom: 0.4rem;
+        line-height: 1.6;
+        position: relative;
+    /* }    .job-description :global(li::before) {
+        content: '●';
+        color: #db8a47;
+        font-size: 0.8rem;
+        position: absolute;
+        left: -1rem;
+        top: 0.1rem;
+        text-shadow: none;
+        box-shadow: none;
+    } */
+
+    .job-description :global(p) {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .job-entry {
+            padding: 1rem;
+        }
+
+        .company-date {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.2rem;
+        }
+        .separator {
+            display: none;
+        }
+    }
+</style>
+
+<style>
+    .job-entry {
+        background: var(--bg-tertiary);
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-lg);
+        border-left: 4px solid var(--accent-color);
+        transition: var(--transition-base);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .job-entry::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--accent-color);
+        transition: var(--transition-base);
+    }
+
+    .job-entry:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px var(--shadow-dark);
+        background: var(--bg-quaternary);
+    }
+
+    .job-entry:hover::before {
+        width: 6px;
+        background: var(--primary-color);
+    }
+
+    /* Type variants */
+    .job-entry--job {
+        border-left-color: var(--color-experience);
+    }
+
+    .job-entry--job::before {
+        background: var(--color-experience);
+    }
+
+    .job-entry--job:hover::before {
+        background: var(--color-experience);
+    }
+
+    .job-entry--education {
+        border-left-color: var(--color-education);
+    }
+
+    .job-entry--education::before {
+        background: var(--color-education);
+    }
+
+    .job-entry--education:hover::before {
+        background: var(--color-education);
+    }
+
+    .job-entry--project {
+        border-left-color: var(--color-projects);
+    }
+
+    .job-entry--project::before {
+        background: var(--color-projects);
+    }
+
+    .job-entry--project:hover::before {
+        background: var(--color-projects);
+    }
+
+    .job-header {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .job-title {
+        margin: 0 0 var(--spacing-sm) 0;
+        color: var(--primary-color);
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-tight);
+    }
+
+    .job-meta {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .company-date {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+
+    .company {
+        color: var(--secondary-color);
+        font-weight: var(--font-weight-medium);
+    }
+
+    .period {
+        color: var(--text-muted);
+        font-size: var(--font-size-xs);
+        background: var(--bg-secondary);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--radius-sm);
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        color: var(--text-muted);
+        font-size: var(--font-size-xs);
+    }
+
+    .location i {
+        color: var(--accent-color);
+    }
+
+    .job-description {
+        color: var(--text-color);
+        line-height: var(--line-height-relaxed);
+    }
+
+    .job-description :global(p) {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .job-description :global(ul) {
+        margin: var(--spacing-sm) 0;
+        padding-left: var(--spacing-lg);
+    }
+
+    .job-description :global(li) {
+        margin-bottom: var(--spacing-xs);
+        line-height: var(--line-height-base);
+        position: relative;
+    }
+
+    .job-description :global(li::marker) {
+        color: var(--accent-color);
+    }
+
+    .job-description :global(strong) {
+        color: var(--primary-color);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .job-entry {
+            padding: var(--spacing-md);
+        }
+
+        .job-title {
+            font-size: var(--font-size-base);
+        }
+
+        .company-date {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-xs);
+        }
+
+        .job-description :global(ul) {
+            padding-left: var(--spacing-md);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .job-entry {
+            padding: var(--spacing-sm);
+        }
+
+        .job-title {
+            font-size: var(--font-size-sm);
+        }
+    }
+</style>

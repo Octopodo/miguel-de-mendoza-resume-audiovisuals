@@ -6,5 +6,12 @@ export default defineConfig({
     site: 'https://Octopodo.github.io',
     base: '/cv-2025',
     output: 'static',
-    outDir: 'docs'
+    outDir: 'docs',
+    i18n: {
+        defaultLocale: 'es',
+        locales: ['es', 'en'],
+        routing: {
+            prefixDefaultLocale: false,
+        },
+    },
 });

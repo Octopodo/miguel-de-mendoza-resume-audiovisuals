@@ -1,56 +1,247 @@
 ---
-import Header from '../components/Header.astro';
-import Section from '../components/Section.astro';
-import cvData from '../data/cv.json';
-import '../styles/global.css';
-const { sections } = cvData;
+import Layout from '../layouts/Layout.astro';
+import CVContent from '../components/CVContent.astro';
+import CVHeader from '../components/CVHeader.astro';
+import CVSection from '../components/CVSection.astro';
+import JobEntry from '../components/JobEntry.astro';
+import SkillsList from '../components/SkillsList.astro';
 
-const icons = {
-    Perfil: 'fa-user',
-    'Herramientas y Tecnologías': 'fa-tools',
-    'Experiencia Profesional': 'fa-briefcase',
-    'Proyectos Personales Destacados': 'fa-code',
-    Formación: 'fa-graduation-cap',
-    Habilidades: 'fa-star',
-    'Idiomas y Otros Datos': 'fa-globe',
+// Datos del CV en español
+const personalInfo = {
+    name: 'Miguel de Mendoza',
+    title: 'Operador de Cámara y Técnico Audiovisual',
+    contact: 'm.legnacra@gmail.com | +34 XXX XXX XXX | LinkedIn | Madrid',
 };
+
+const technicalSkills = [
+    'Manejo de cámaras réflex y de video 4K',
+    'Configuración de planos y encuadres en estudio',
+    'Iluminación profesional',
+    'Chroma key',
+    'Edición de video',
+    'Adobe After Effects',
+    'Adobe Photoshop',
+    'Adobe Illustrator',
+    'Adobe Premiere',
+    'Cinema 4D',
+    'Presonus Studio One 4',
+    'Desarrollo con Extendscript y CEP',
+    'Frontend: Vue, CSS/Sass, Node, Webpack',
+    'Gestión de proyectos',
+    'Automatización de procesos',
+];
+
+const personalSkills = [
+    'Alta capacidad de aprendizaje y adaptación',
+    'Organización y gestión eficiente del tiempo',
+    'Trabajo en equipo y comunicación efectiva',
+    'Creatividad e inquietud artística',
+    'Inglés (B1, hablado y escrito)',
+    'Catalán (nativo)',
+    'Español (nativo)',
+];
 ---
 
-<!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CV - Motion Graphics y Desarrollador Full Stack</title>
-        <link rel="stylesheet" href="/styles/global.css" />
-    </head>
-    <body>
-        <div class="container">
-            <Header />
+<Layout title="CV - Operador de Cámara y Técnico Audiovisual" lang="es">
+    <CVContent>
+        <CVHeader
+            name={personalInfo.name}
+            title={personalInfo.title}
+            contact={personalInfo.contact}
+        />
 
-            <Section title="My section" icon="user" titleColor="primary">
-                <p slot="content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Deleniti totam minus sapiente, maxime consequuntur
-                    reiciendis facilis quidem laudantium delectus quos sit
-                    mollitia velit iste consectetur ipsum quae et! Officiis,
-                    praesentium.
-                </p>
-            </Section>
+        <CVSection title="Perfil profesional">
+            <p>
+                Operador de cámara y técnico audiovisual con más de 15 años de
+                experiencia en producción y grabación de video, tanto en estudio
+                como en directo. Experto en el manejo de cámaras réflex y de
+                video 4K, iluminación, chroma key y soporte técnico en rodajes.
+                Combino habilidades técnicas y creativas para garantizar
+                resultados de alta calidad en proyectos audiovisuales. Mi
+                capacidad analítica, atención al detalle y enfoque colaborativo
+                me convierten en un activo valioso para cualquier equipo de
+                producción.
+            </p>
+        </CVSection>
+
+        <CVSection title="Habilidades técnicas">
+            <SkillsList items={technicalSkills} variant="tech" />
+        </CVSection>
+
+        <CVSection title="Habilidades personales">
+            <SkillsList items={personalSkills} variant="languages" />
+        </CVSection>
+    </CVContent>
+
+    <CVSection title="Experiencia profesional">
+        <JobEntry
+            position="Técnico de Estudio y Editor"
+            company="ForproTV"
+            period="Septiembre 2024 – Actualidad"
+        >
+            <ul>
+                <li>
+                    Operador de cámaras en estudio para videos formativos,
+                    utilizando cámaras réflex y de video 4K.
+                </li>
+                <li>
+                    Configuración de iluminación, chroma key y sonido para
+                    grabaciones en vivo y pregrabadas.
+                </li>
+                <li>
+                    Edición de video y efectos, optimizando flujos de trabajo y
+                    reduciendo tiempos de edición en un 80%.
+                </li>
+            </ul>
+        </JobEntry>
+
+        <JobEntry
+            position="Freelance – Operador de Cámara y Postproductor"
+            company="Señor Balboa, Forpro.tv, Ejecon"
+            period="Octubre 2016 – Abril 2019"
+        >
+            <ul>
+                <li>
+                    Operador de cámara en rodajes para eventos en directo y
+                    producciones en estudio.
+                </li>
+                <li>
+                    Soporte técnico en chroma key, corrección de color y
+                    postproducción con After Effects.
+                </li>
+                <li>
+                    Fotografía y grabación de video para proyectos corporativos
+                    y formativos.
+                </li>
+            </ul>
+        </JobEntry>
+
+        <JobEntry
+            position="Grafista"
+            company="Lucky Road"
+            period="Septiembre – Octubre 2016"
+        >
+            <ul>
+                <li>
+                    Creación de grafismos para el programa de Disney Channel
+                    "Boca-zas".
+                </li>
+                <li>
+                    Operación de cámara y soporte técnico en producción
+                    audiovisual, cumpliendo plazos ajustados.
+                </li>
+            </ul>
+        </JobEntry>
+
+        <JobEntry
+            position="Director Creativo"
+            company="TVA / I+D"
+            period="2014 – 2015"
+        >
+            <ul>
+                <li>
+                    Producción de videos corporativos, incluyendo operación de
+                    cámara y diseño multimedia.
+                </li>
+                <li>
+                    Soporte técnico en proyectos audiovisuales y desarrollo de
+                    herramientas para optimizar procesos.
+                </li>
+            </ul>
+        </JobEntry>
+
+        <JobEntry
+            position="Freelance – Motion Graphics y Operador de Cámara"
+            company="Clientes: Cáritas, Renta 4, Cintra"
+            period="2011 – 2014"
+        >
+            <ul>
+                <li>
+                    Operador de cámara en proyectos corporativos, spots y
+                    videoclips, asegurando calidad técnica.
+                </li>
+                <li>
+                    Diseño y producción de motion graphics con After Effects
+                    para diversos entregables audiovisuales.
+                </li>
+            </ul>
+        </JobEntry>
+
+        <JobEntry
+            position="Productor Musical"
+            company="Kalamar Tinta Negra, King Joker, El Mito de la Taberna"
+            period="Abril 2019 – Mayo 2022"
+        >
+            <ul>
+                <li>
+                    Grabación y edición de audio, aplicando habilidades técnicas
+                    en producción sonora.
+                </li>
+            </ul>
+        </JobEntry>
+    </CVSection>
+
+    <CVSection title="Formación">
+        <JobEntry
+            position="Licenciado en Bellas Artes"
+            company="Universidad Francisco de Vitoria (UFV)"
+            period="2011"
+        />
+
+        <JobEntry
+            position="Diplomado en Mezcla"
+            company="Instituto de Mezcla"
+            period="2019"
+        />
+    </CVSection>
+
+    <CVSection title="Proyectos adicionales">
+        <div class="project-entry">
+            <h4>KT Smart Sequencer</h4>
+            <p>
+                Herramienta de automatización para montaje de videos en After
+                Effects, optimizando flujos de trabajo audiovisuales.
+            </p>
         </div>
 
-        <button id="scroll-top" title="Volver arriba">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+        <div class="project-entry">
+            <h4>KT Framework</h4>
+            <p>
+                Framework para APIs de Adobe, facilitando el desarrollo de
+                herramientas sin afectar tiempos de producción.
+            </p>
+        </div>
+    </CVSection>
 
-        <script>
-            const scrollTopBtn = document.getElementById('scroll-top');
-            window.addEventListener('scroll', () => {
-                scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
-            });
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        </script>
-    </body>
-</html>
+    <CVSection title="Información adicional">
+        <ul>
+            <li>Carné de conducir B.</li>
+            <li>
+                Técnico de sonido y músico, con experiencia en desmontaje y
+                ensamblaje de hardware.
+            </li>
+        </ul>
+    </CVSection>
+</Layout>
+
+<style>
+    .project-entry {
+        background: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .project-entry h4 {
+        color: var(--primary-color);
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+    }
+
+    .project-entry p {
+        margin: 0;
+        color: var(--text-color);
+        line-height: 1.5;
+    }
+</style>

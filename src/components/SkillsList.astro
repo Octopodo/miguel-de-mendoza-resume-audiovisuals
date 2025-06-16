@@ -1,0 +1,67 @@
+---
+export interface Props {
+    items: string[];
+    variant?: 'tech' | 'languages' | 'default';
+}
+
+const { items, variant = 'default' } = Astro.props;
+---
+
+<div class={`skills-list skills-${variant}`}>
+    <ul>
+        {items.map((skill) => <li>{skill}</li>)}
+    </ul>
+</div>
+
+<style>
+    .skills-list ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .skills-list li {
+        padding: 0.75rem 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .skills-list li:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--accent-color);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .skills-tech li {
+        border-left: 3px solid #3b82f6;
+    }
+
+    .skills-tech li:hover {
+        border-left-color: #60a5fa;
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    }
+
+    .skills-languages li {
+        border-left: 3px solid #10b981;
+    }
+
+    .skills-languages li:hover {
+        border-left-color: #34d399;
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .skills-list ul {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
