@@ -310,4 +310,13 @@ const { position, company, period } = Astro.props;
             font-size: var(--font-size-sm);
         }
     }
+
+    li:before {
+        content: '•';
+        color: var(--accent-color);
+        font-size: 0.8rem;
+        position: absolute;
+        left: -1.2rem;
+        top: 0.1rem;
+    }
 </style>
