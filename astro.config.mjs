@@ -7,6 +7,9 @@ export default defineConfig({
     base: '/cv-2025',
     output: 'static',
     outDir: 'docs',
+    build: {
+        inlineStylesheets: 'always',
+    },
     i18n: {
         defaultLocale: 'es',
         locales: ['es', 'en'],
